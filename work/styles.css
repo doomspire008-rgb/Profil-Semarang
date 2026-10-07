@@ -1,0 +1,479 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f4f5f7;
+    color: var(--navy);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    color: var(--navy);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.main-content img {
+    cursor: zoom-in;
+}
+
+.main-content img:focus-visible {
+    outline: 3px solid var(--orange);
+    outline-offset: 3px;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+:root {
+    --waitu-white: #F8F9FA;
+    --blue: #2C5AA0;
+    --orange: #FF6B35;
+    --navy: #1A365D;
+}
+
+.site-header {
+    background:
+        linear-gradient(rgba(4, 19, 36, 0.72), rgba(4, 19, 36, 0.72)),
+        url('img/Tugu-Muda-Semarang.jpg') center center/cover no-repeat;
+    width: 100%;
+    height: 100px;
+    min-height: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: height 0.25s ease, box-shadow 0.25s ease;
+}
+
+.site-header.is-scrolled {
+    height: 60px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+}
+
+.site-header .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    transition: padding 0.25s ease;
+}
+
+.logo {
+    font-family: 'Quicksand', sans-serif;
+    font-size: clamp(2.1rem, 2.2vw, 3.1rem);
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.96);
+    letter-spacing: 0.01em;
+    line-height: 1;
+    transition: font-size 0.25s ease;
+}
+
+.site-header.is-scrolled .logo {
+    font-size: clamp(1.75rem, 1.9vw, 2.5rem);
+}
+
+.main-nav ul {
+    display: flex;
+    align-items: center;
+    gap: clamp(1.25rem, 2vw, 3rem);
+    list-style: none;
+}
+
+.main-nav a {
+    color: rgba(255, 255, 255, 0.96);
+    font-family: 'Open Sans', sans-serif;
+    font-size: clamp(1rem, 1.2vw, 1.3rem);
+    font-weight: 400;
+    transition: opacity 0.2s ease;
+    display: inline-block;
+    position: relative;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.2rem;
+    width: 0;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.9);
+    transition: width 0.25s ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a:focus-visible::after {
+    width: 100%;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible {
+    opacity: 0.85;
+}
+
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    gap: 5px;
+    padding: 0.5rem;
+    border: 0;
+    background: transparent;
+}
+
+.mobile-menu-btn span {
+    width: 26px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 3px;
+}
+
+.main-content {
+    padding: calc(145px + 4rem) 0 4.5rem;
+    background: #f4f5f7;
+}
+
+.section {
+    padding: 0 0 3.5rem;
+    scroll-margin-top: 100px;
+}
+
+.section .container {
+    max-width: 1400px;
+    padding: 0 2rem;
+}
+
+.section-title {
+    font-size: clamp(2.7rem, 2.8vw, 4.2rem);
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 4px solid var(--orange);
+    display: inline-block;
+    color: #1d3557;
+    line-height: 1.15;
+    letter-spacing: -0.04em;
+}
+
+.section p {
+    font-size: clamp(1.08rem, 1.25vw, 1.45rem);
+    line-height: 1.85;
+    color: #1b3557;
+    margin-bottom: 1.5rem;
+    max-width: 1200px;
+    text-align: justify;
+}
+
+.wisata-list,
+.rekomendasi-list {
+    list-style: none;
+    margin-top: 2rem;
+}
+
+.wisata-list li {
+    margin-bottom: 2.2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #dfe3e7;
+}
+
+.attraction-image {
+    margin-bottom: 1rem;
+}
+
+.attraction-image img {
+    width: 100%;
+    max-height: 430px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.attraction-link {
+    color: var(--blue);
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 0.35rem;
+    font-size: 1.5rem;
+}
+
+.attraction-link:hover,
+.attraction-link:focus-visible {
+    color: var(--orange);
+}
+
+#geografis .container {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.5rem;
+}
+
+.geografis-content {
+    flex: 1;
+}
+
+.photo-aside {
+    flex: 0 0 38%;
+    margin-left: 0.5rem;
+}
+
+.photo-box {
+    background: var(--waitu-white);
+    border: 2px solid var(--navy);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.photo-box img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.photo-caption {
+    text-align: center;
+    padding: 0.75rem;
+    color: var(--orange);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9rem;
+}
+
+.image-viewer {
+    position: fixed;
+    inset: 0;
+    width: fit-content;
+    max-width: 96vw;
+    max-height: 96vh;
+    margin: auto;
+    padding: 3.5rem 1rem 1rem;
+    border: 0;
+    border-radius: 12px;
+    background: #08101a;
+    color: #fff;
+    overflow: auto;
+}
+
+.image-viewer::backdrop {
+    background: rgba(0, 0, 0, 0.86);
+}
+
+.image-viewer-content {
+    display: grid;
+    justify-items: center;
+    gap: 0.75rem;
+    margin: 0;
+}
+
+.image-viewer-image {
+    max-width: min(92vw, 1400px);
+    max-height: 82vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    cursor: zoom-out;
+}
+
+.image-viewer-caption {
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.image-viewer-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.75rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
+    font-size: 1.75rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.image-viewer-close:hover,
+.image-viewer-close:focus-visible {
+    background: rgba(255, 255, 255, 0.28);
+}
+
+.rekomendasi-list li {
+    background: #fff;
+    border: 1px solid #dfe3e7;
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.rekomendasi-list strong {
+    color: var(--orange);
+    font-family: 'Quicksand', sans-serif;
+}
+
+.site-footer {
+    background: #f4f5f7;
+    border-top: 1px solid #dfe3e7;
+    padding: 2rem 0 2.5rem;
+}
+
+.site-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.footer-info p {
+    color: var(--navy);
+    font-size: 0.9rem;
+}
+
+.footer-nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.footer-nav a {
+    color: var(--navy);
+    font-size: 0.9rem;
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus-visible {
+    color: var(--orange);
+}
+
+@media (max-width: 768px) {
+    .site-header {
+        height: 110px;
+    }
+
+    .site-header.is-scrolled {
+        height: 64px;
+    }
+
+    .site-header .container {
+        padding: 0 1rem;
+        position: relative;
+    }
+
+    .logo {
+        font-size: 2.1rem;
+    }
+
+    .site-header.is-scrolled .logo {
+        font-size: 1.7rem;
+    }
+
+    .main-nav {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 1rem;
+        right: 1rem;
+        padding: 0.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 0.75rem;
+        background: rgba(4, 19, 36, 0.97);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-0.5rem);
+        transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+    }
+
+    .main-nav.is-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .main-nav a {
+        display: block;
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+    }
+
+    .main-nav a::after {
+        display: none;
+    }
+
+    .main-nav a:hover,
+    .main-nav a:focus-visible {
+        opacity: 1;
+        color: var(--orange);
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+        z-index: 1;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .main-content {
+        padding-top: calc(110px + 4rem);
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .section {
+        scroll-margin-top: 84px;
+    }
+
+    .section p {
+        font-size: 1rem;
+    }
+
+    #geografis .container {
+        display: block;
+    }
+
+    .photo-aside {
+        width: 100%;
+        margin: 1.5rem 0 0;
+    }
+
+    .footer-nav ul {
+        flex-wrap: wrap;
+    }
+}
